@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Change Background Color",
+  "version": "1.0.0",
+  "description": "change the current site background to your desired color",
+  "permissions": ["scripting", "activeTab"],
+
+  "icons": {
+    "64": "bg-color64.png",
+    "128": "bg-color128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "64": "bg-color64.png",
+      "128": "bg-color128.png"
+    }
+  }
+}
