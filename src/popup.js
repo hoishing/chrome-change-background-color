@@ -2,17 +2,16 @@ document.getElementById("colorPicker").addEventListener("input", event => {
   changeBackground(event.target.value)
 })
 
-document.getElementById("color1").addEventListener("click", () => {
-  changeBackground("#FFFBEB")
-})
+const colors = ["#fffaec", "#f8f3e7", "#d9d9d9", "#bdbdbd"]
 
-document.getElementById("color2").addEventListener("click", () => {
-  changeBackground("#D9D9D9")
-})
-
-document.getElementById("color3").addEventListener("click", () => {
-  changeBackground("#292929")
-})
+for (var i = 0; i < 4; i++) {
+  let ele = document.getElementById(`color${i}`)
+  let color = colors[i]
+  ele.addEventListener("click", () => {
+    changeBackground(color)
+  })
+  ele.style.backgroundColor = color
+}
 
 function changeBackground(color) {
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {

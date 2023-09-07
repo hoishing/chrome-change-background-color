@@ -1,80 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Select Color</title>
-    <style>
-      body {
-        font-family: "Quicksand", sans-serif;
-        font-size: 0.8rem;
-        padding: 1rem;
-        min-width: 14rem;
-      }
-      #button-container {
-        margin-bottom: 0.5rem;
-      }
-      #color-picker-container {
-        display: flex;
-        align-items: center;
-      }
-      label {
-        font-weight: bold;
-        white-space: nowrap;
-        display: block;
-        margin: 0.5rem;
-        color: #4a4a4a;
-      }
-      #colorPicker {
-        display: block;
-        width: 100%;
-        height: 2rem;
-        margin: 0.5rem;
-        border: none;
-        padding: 0.2rem;
-        border-radius: 4px;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-      }
-      button {
-        font-family: inherit;
-        font-weight: 500;
-        display: inline-block;
-        padding: 10px 16px;
-        margin-right: 8px;
-        margin-bottom: 8px;
-        font-size: 14px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: box-shadow 0.3s ease;
-        text-align: center;
-        width: 4rem;
-      }
-      button:hover {
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-      }
-      #color1 {
-        background-color: #fffbeb;
-      }
-      #color2 {
-        background-color: #d9d9d9;
-      }
-      #color3 {
-        background-color: #292929;
-        color: lightgray;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="button-container">
-      <button id="color1">sepia</button>
-      <button id="color2">grey</button>
-      <button id="color3">dark</button>
-    </div>
-    <div id="color-picker-container">
-      <label for="colorPicker">custom color:</label>
-      <input type="color" id="colorPicker" value="#f5cccc" />
-    </div>
-    <script src="popup.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select Color</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="button-container">
+    <button id="color0"></button>
+    <button id="color1"></button>
+    <button id="color2"></button>
+    <button id="color3"></button>
+  </div>
+  <div id="color-picker-container">
+    <label for="colorPicker">custom color:</label>
+    <input type="color" id="colorPicker" value="#f5cccc" />
+  </div>
+  <script src="popup.js"></script>
+</body>
+
 </html>
