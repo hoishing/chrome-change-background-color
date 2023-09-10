@@ -12,7 +12,7 @@
 [platform]: https://img.shields.io/badge/platform-chrome-red
 [lang]: https://img.shields.io/badge/lang-javascript-yellow
 
-🎬 https://youtu.be/SR22jTkVru4
+🎬 [video demo](https://youtu.be/SR22jTkVru4)
 
 ## Motivation
 
