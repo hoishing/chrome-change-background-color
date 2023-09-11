@@ -4,7 +4,7 @@
 
 > chrome extension to change the background color of current site
 
-<!-- 📥 [Download][chrome-store] @ Chrome Web Store -->
+📥 [Download][chrome-store] @ Chrome Web Store
 
 ![screen cap][screen]
 
@@ -27,5 +27,5 @@ Open a [github issue] or ping me on [Twitter ![twitter-icon]][Twitter]
 [github issue]: https://github.com/hoishing/chrome-change-background-color/issues
 [Twitter]: https://twitter.com/intent/tweet?text=https://github.com/hoishing/chrome-change-background-color/%20%0D@hoishing
 [twitter-icon]: https://api.iconify.design/logos/twitter.svg?width=20
-[chrome-store]: https://chrome.google.com/webstore/detail/chrome-change-background-color/
+[chrome-store]: https://chrome.google.com/webstore/detail/change-background-color/ajlcblmihhjochfgehfcfiopkcbfnlfh
 [screen]: https://lh3.googleusercontent.com/l3s8PoLWYwdO8fakulO87TLWasK4hFZILDuL7YRLEmQGhbcs2Lg8orrPzCU6pb24oiKL_r2h9W_niQ2cSKwqCu2l=w640-h400-e365-rj-sc0x00ffffff
