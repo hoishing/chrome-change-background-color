@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Color</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Select Color</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-  <div id="button-container">
-    <button id="color0"></button>
-    <button id="color1"></button>
-    <button id="color2"></button>
-    <button id="color3"></button>
-  </div>
-  <div id="color-picker-container">
-    <label for="colorPicker">custom color:</label>
-    <input type="color" id="colorPicker" value="#f5cccc" />
-  </div>
-  <script src="popup.js"></script>
-</body>
-
+  <body>
+    <div id="button-container">
+      <button id="color0"></button>
+      <button id="color1"></button>
+      <button id="color2"></button>
+      <button id="color3"></button>
+    </div>
+    <div id="color-picker-container">
+      <label for="colorPicker">custom color:</label>
+      <input type="color" id="colorPicker" value="#f5cccc" />
+    </div>
+    <div id="all-elements-color-checkbox-container">
+      <input type="radio" id="bodyOnly" name="colorScope" value="body" checked />
+      <label for="bodyOnly">body only</label>
+      <input type="radio" id="allElements" name="colorScope" value="all" />
+      <label for="allElements">all elements</label>
+    </div>
+    <script src="popup.js"></script>
+  </body>
 </html>

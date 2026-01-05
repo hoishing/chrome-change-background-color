@@ -40,9 +40,10 @@ button:hover {
   height: 2.2rem;
   /* border: solid 1px black; */
 }
+
 label {
   white-space: nowrap;
-  display: block;
+  display: inline-block;
   margin: 0.5rem;
 }
 #colorPicker {
@@ -53,4 +54,22 @@ label {
   padding: 2px 4px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#all-elements-color-checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+#all-elements-color-checkbox-container input[type="radio"] {
+  margin: 0;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+#all-elements-color-checkbox-container label {
+  margin: 0 0.5rem;
+  cursor: pointer;
+  line-height: 1;
 }
