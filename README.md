@@ -4,15 +4,19 @@
 
 > chrome extension to change the background color of current site
 
-📥 [Download][chrome-store] @ Chrome Web Store
-
-![screen cap][screen]
+<table>
+<tr>
+<td><img src="preview1.webp" /></td>
+<td><img src="preview2.webp" /></td>
+</tr>
+</table>
 
 [mit]: https://img.shields.io/github/license/hoishing/multilingual-voice-search
 [platform]: https://img.shields.io/badge/platform-chrome-red
 [lang]: https://img.shields.io/badge/lang-javascript-yellow
 
-🎬 [video demo](https://www.youtube.com/watch?v=oizbEM-QRhE)
+- 📥 [Download @ Chrome Web Store][chrome-store]
+- 🎬 [Video Demo](https://www.youtube.com/watch?v=oizbEM-QRhE)
 
 ## Motivation
 
@@ -36,4 +40,3 @@ v2.0.0
 [Github issue]: https://github.com/hoishing/change/issues
 [LinkedIn]: https://www.linkedin.com/in/kng2
 [chrome-store]: https://chrome.google.com/webstore/detail/change-background-color/ajlcblmihhjochfgehfcfiopkcbfnlfh
-[screen]: https://i9.ytimg.com/vi_webp/oizbEM-QRhE/maxresdefault.webp?v=695c8c0d&sqp=CMSY8soG&rs=AOn4CLBT3KYwe2_ayWG2eUbcAXDC5bo7hQ
