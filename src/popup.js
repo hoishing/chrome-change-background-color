@@ -1,6 +1,6 @@
 // Pre-defined colors
 const bgColors = ["#fffaec", "#f8f3e7", "#d9d9d9", "#bdbdbd"];
-const fontColors = ["#3f3f3fff", "#929292ff", "#d6d6d6ff", "#efefefff"];
+const fontColors = ["#3f3f3f", "#929292", "#d6d6d6", "#efefef"];
 
 // Initialize popup
 document.addEventListener("DOMContentLoaded", () => {
@@ -15,8 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Load saved font color
   chrome.storage.local.get(["fontColor"], (result) => {
     if (result.fontColor) {
-      document.getElementById("fontColorPicker").value = result.fontColor;
-      document.getElementById("fontColorValue").textContent = result.fontColor;
+      const savedColor = result.fontColor;
+      const sixDigitColor = savedColor.length === 9 ? savedColor.substring(0, 7) : savedColor;
+      document.getElementById("fontColorPicker").value = sixDigitColor;
+      document.getElementById("fontColorValue").textContent = savedColor;
     }
   });
 
@@ -47,10 +49,6 @@ function initializeBackgroundColorHandlers() {
   bgColorPicker.addEventListener("input", (event) => {
     const color = event.target.value;
     bgColorValue.textContent = color;
-  });
-
-  bgColorPicker.addEventListener("change", (event) => {
-    const color = event.target.value;
     saveBackgroundColor(color);
     changeBackgroundColor(color);
   });
@@ -93,10 +91,6 @@ function initializeFontColorHandlers() {
   fontColorPicker.addEventListener("input", (event) => {
     const color = event.target.value;
     fontColorValue.textContent = color;
-  });
-
-  fontColorPicker.addEventListener("change", (event) => {
-    const color = event.target.value;
     selectAndApplyFontColor(color);
   });
 
@@ -113,7 +107,9 @@ function initializeFontColorHandlers() {
 }
 
 function selectAndApplyFontColor(color) {
-  document.getElementById("fontColorPicker").value = color;
+  // Strip alpha channel if present (convert #rrggbbaa to #rrggbb)
+  const sixDigitColor = color.length === 9 ? color.substring(0, 7) : color;
+  document.getElementById("fontColorPicker").value = sixDigitColor;
   document.getElementById("fontColorValue").textContent = color;
   saveFontColor(color);
   changeFontColor(color);

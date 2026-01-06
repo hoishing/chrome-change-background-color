@@ -16,8 +16,9 @@ body {
   font-weight: 500;
   color: #1a1a2e;
   padding: 0;
-  min-width: 320px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+  min-width: 370px;
+  min-height: 600px;
+  background: #ffffff;
 }
 
 .popup-container {
@@ -29,18 +30,12 @@ body {
 
 /* Section Styles */
 .section {
-  background: #ffffff;
+  background: transparent;
   border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.8);
   transition:
     box-shadow 0.3s ease,
     transform 0.2s ease;
-}
-
-.section:hover {
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
 }
 
 .section-header {
