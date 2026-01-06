@@ -1,75 +1,297 @@
-body {
-  font-family: "Quicksand", sans-serif;
-  font-size: 0.8rem;
-  font-weight: bold;
-  padding: 1rem;
-  min-width: 14rem;
-  color: #4a4a4a;
-}
-
-/* color rows */
-
-#button-container {
-  display: flex;
-  height: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-button {
-  font: inherit;
-  color: inherit;
-  height: 1.8rem;
-  border: none;
-  border-radius: 5px;
-  margin: 0.5rem 0.2rem;
-  flex-grow: 1;
-  flex-basis: 0;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease;
-}
-
-button:hover {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* color packer */
-
-#color-picker-container {
-  display: flex;
-  align-items: center;
-  height: 2.2rem;
-  /* border: solid 1px black; */
-}
-
-label {
-  white-space: nowrap;
-  display: inline-block;
-  margin: 0.5rem;
-}
-#colorPicker {
-  width: 100%;
-  height: 2rem;
-  margin: 0.5rem;
-  border: none;
-  padding: 2px 4px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#all-elements-color-checkbox-container {
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-#all-elements-color-checkbox-container input[type="radio"] {
+* {
+  box-sizing: border-box;
   margin: 0;
-  margin-left: 0.5rem;
-  cursor: pointer;
+  padding: 0;
 }
 
-#all-elements-color-checkbox-container label {
-  margin: 0 0.5rem;
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a2e;
+  padding: 0;
+  min-width: 320px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+}
+
+.popup-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Section Styles */
+.section {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+
+.section:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f2f5;
+}
+
+.section-header h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a2e;
+  letter-spacing: -0.3px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: #6366f1;
+  flex-shrink: 0;
+}
+
+/* Color Row */
+.color-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.color-btn {
+  flex: 1;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
-  line-height: 1;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.color-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.color-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.color-btn:hover::before {
+  opacity: 1;
+}
+
+.color-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Picker Row */
+.picker-row {
+  margin-bottom: 16px;
+}
+
+.picker-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.picker-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.picker-wrapper:focus-within {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.picker-wrapper input[type="color"] {
+  width: 40px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+}
+
+.picker-wrapper input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 2px;
+}
+
+.picker-wrapper input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 6px;
+}
+
+.color-value {
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 12px;
+  color: #475569;
+  font-weight: 500;
+}
+
+/* Scope Row */
+.scope-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.scope-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.radio-group {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #334155;
+  transition: color 0.2s ease;
+}
+
+.radio-label:hover {
+  color: #1a1a2e;
+}
+
+.radio-label input[type="radio"] {
+  display: none;
+}
+
+.radio-custom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #cbd5e1;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom {
+  border-color: #6366f1;
+  background: #6366f1;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 8px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+}
+
+.divider-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Button container animations */
+#button-container {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 300px) {
+  .popup-container {
+    padding: 16px;
+  }
+
+  .section {
+    padding: 16px;
+  }
+
+  .color-row {
+    gap: 8px;
+  }
+
+  .color-btn {
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: 8px;
+  }
 }

@@ -5,24 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Select Color</title>
     <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   </head>
 
   <body>
-    <div id="button-container">
-      <button id="color0"></button>
-      <button id="color1"></button>
-      <button id="color2"></button>
-      <button id="color3"></button>
-    </div>
-    <div id="color-picker-container">
-      <label for="colorPicker">custom color:</label>
-      <input type="color" id="colorPicker" value="#f5cccc" />
-    </div>
-    <div id="all-elements-color-checkbox-container">
-      <input type="radio" id="allElements" name="colorScope" value="all" checked />
-      <label for="allElements">all elements</label>
-      <input type="radio" id="bodyOnly" name="colorScope" value="body" />
-      <label for="bodyOnly">body only</label>
+    <div class="popup-container">
+      <!-- Background Color Section -->
+      <div class="section">
+        <div class="section-header">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          </svg>
+          <h2>Background Color</h2>
+        </div>
+
+        <div class="color-row">
+          <button id="bg-color0" class="color-btn" title="#fffaec"></button>
+          <button id="bg-color1" class="color-btn" title="#f8f3e7"></button>
+          <button id="bg-color2" class="color-btn" title="#d9d9d9"></button>
+          <button id="bg-color3" class="color-btn" title="#bdbdbd"></button>
+        </div>
+
+        <div class="picker-row">
+          <label for="bgColorPicker" class="picker-label">Custom Color</label>
+          <div class="picker-wrapper">
+            <input type="color" id="bgColorPicker" value="#fffaec" />
+            <span class="color-value" id="bgColorValue">#fffaec</span>
+          </div>
+        </div>
+
+        <div class="scope-row">
+          <span class="scope-label">Apply to:</span>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" id="bgAllElements" name="bgColorScope" value="all" checked />
+              <span class="radio-custom"></span>
+              All Elements
+            </label>
+            <label class="radio-label">
+              <input type="radio" id="bgBodyOnly" name="bgColorScope" value="body" />
+              <span class="radio-custom"></span>
+              Body Only
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider">
+        <span class="divider-text">or</span>
+      </div>
+
+      <!-- Font Color Section -->
+      <div class="section">
+        <div class="section-header">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="4 7 4 4 20 4 20 7"></polyline>
+            <line x1="9" y1="20" x2="15" y2="20"></line>
+            <line x1="12" y1="4" x2="12" y2="20"></line>
+          </svg>
+          <h2>Font Color</h2>
+        </div>
+
+        <div class="color-row">
+          <button id="font-color0" class="color-btn" title="#2d2d2d"></button>
+          <button id="font-color1" class="color-btn" title="#3d3d3d"></button>
+          <button id="font-color2" class="color-btn" title="#4a4a4a"></button>
+          <button id="font-color3" class="color-btn" title="#5a5a5a"></button>
+        </div>
+
+        <div class="picker-row">
+          <label for="fontColorPicker" class="picker-label">Custom Color</label>
+          <div class="picker-wrapper">
+            <input type="color" id="fontColorPicker" value="#808080" />
+            <span class="color-value" id="fontColorValue">#808080</span>
+          </div>
+        </div>
+
+        <div class="scope-row">
+          <span class="scope-label">Apply to:</span>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" id="fontAllElements" name="fontColorScope" value="all" checked />
+              <span class="radio-custom"></span>
+              All Elements
+            </label>
+            <label class="radio-label">
+              <input type="radio" id="fontBodyOnly" name="fontColorScope" value="body" />
+              <span class="radio-custom"></span>
+              Body Only
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="popup.js"></script>
   </body>
